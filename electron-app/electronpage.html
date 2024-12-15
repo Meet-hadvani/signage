@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Receiver</title>
+</head>
+<body>
+  <h1>Message Receiver</h1>
+  <div id="message-container">No messages yet...</div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    ipcRenderer.on('receive-message', (event, message) => {
+      document.getElementById('message-container').innerText = message;
+    });
+  </script>
+</body>
+</html>
