@@ -5,26 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preview</title>
 </head>
-<body style="margin: 0; background: #fadcdc; color: white; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
-  <div id="image-container" style="text-align: center; width: 100%;"></div>
-  <script>
-    const ipcRenderer = window.electronAPI?.onPreviewImages || require('electron').ipcRenderer;
-
-    ipcRenderer.on('preview-images', (event, imageUrls) => {
-      console.log('Received preview images:', imageUrls);
-      const container = document.getElementById('image-container');
-      container.innerHTML = '';
-      imageUrls.forEach((url) => {
-        const img = document.createElement('img');
-        img.src = url;
-        img.alt = 'Preview Image';
-        img.style.margin = '10px';
-        img.style.maxWidth = '200px';
-        img.style.maxHeight = '200px';
-        container.appendChild(img);
-      });
-    });
-
-  </script>
+<body>
+  <h2>Client-side Content Showcase</h2>
+  <div id="preview-container" style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <!-- Images will be dynamically injected here -->
+  </div>
+  <script src="./renderer.js"></script>
 </body>
 </html>

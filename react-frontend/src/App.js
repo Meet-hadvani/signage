@@ -76,6 +76,9 @@ function App() {
   ];
 
   const showPreview = () => {
+    // Clear the secondary menu to hide the secondary navigation bar
+    setSecondaryMenu([]);
+  
     if (!savedImages.length) {
       setContent(<p>No images saved. Please select and save images in the Management section.</p>);
       return;
@@ -101,9 +104,7 @@ function App() {
       </div>
     );
   };
-  
-  
-  
+    
   const showContentMenu = () => {
     setSecondaryMenu([
       'New Content',

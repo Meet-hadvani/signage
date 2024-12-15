@@ -36,13 +36,8 @@ app.on('ready', () => {
     previewWindow.loadFile(previewPath);
   }
 
-  previewWindow.on('ready-to-show', () => {
-    console.log('Preview window is ready to show.');
-  });
-
   ipcMain.handle('open-preview', (event, imageUrls) => {
-    console.log('Opening preview for images:', imageUrls);
-    if (previewWindow) {
+    if (previewWindow && !previewWindow.isDestroyed()) {
       previewWindow.webContents.send('preview-images', imageUrls);
       previewWindow.show();
       previewWindow.focus();
@@ -50,6 +45,7 @@ app.on('ready', () => {
       console.error('Preview window is not available.');
     }
   });
+  
   
 });
 
