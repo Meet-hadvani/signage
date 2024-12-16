@@ -82,5 +82,5 @@ For detailed usage instructions, refer to the [documentation](https://github.com
 Contributions are welcome! Please open an issue or submit a pull request if you want to contribute.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the creative Commons License.
 
